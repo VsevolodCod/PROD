@@ -1,0 +1,198 @@
+* {
+    /* box-sizing: border-box; */
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+h1 {
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin-bottom: 2em;
+}
+
+.container {
+    /* Увеличиваем ширину контейнера */
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.test-button {
+    display: block;
+    padding: 10px 10px;
+    font-size: 1em;
+    color: rgb(95, 91, 91);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: left;
+    width: auto;
+}
+
+.test-button:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.test-button:hover {
+    background-color: #b3b3b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    /* Увеличиваем ширину модального окна */
+    width: 70%;
+    /* Увеличиваем максимальную ширину */
+    max-width: 600px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    /* Устанавливаем высоту модального окна */
+    height: 80%;
+    /* Распределяем пространство между элементами */
+    justify-content: space-between;
+}
+
+.add-question-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#questionForm {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Позволяет форме занимать оставшееся пространство */
+    overflow-y: auto;
+    /* Позволяет прокручивать форму, если она слишком длинная */
+}
+
+#questionForm label {
+    margin-top: 10px;
+}
+
+#questionForm input,
+#questionForm select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.answers {
+    display: flex;
+    flex-wrap: wrap;
+    /* Позволяет элементам переноситься на новую строку */
+    justify-content: space-between;
+    /* Распределяет элементы по ширине */
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    /* Устанавливаем ширину для двух колонок */
+    margin-bottom: 10px;
+    /* Отступ между строками */
+}
+
+.answer input[type="radio"] {
+    margin-right: 10px;
+    /* Отступ справа от радио-кнопки */
+    margin-left: 5px;
+    /* Отступ слева от радио-кнопки */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.add-remove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-remove button {
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+}
