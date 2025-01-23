@@ -1,5 +1,5 @@
 * {
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 body {
@@ -60,11 +60,10 @@ p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.modal-content {
+.modal-body {
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
@@ -72,13 +71,13 @@ p {
     /* Увеличиваем ширину модального окна */
     width: 70%;
     /* Увеличиваем максимальную ширину */
-    max-width: 600px;
+    max-width: 800px;
     border-radius: 7px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     /* Устанавливаем высоту модального окна */
-    height: 80%;
+    height: auto;
     /* Распределяем пространство между элементами */
     justify-content: space-between;
 }
@@ -96,81 +95,53 @@ p {
     font-size: 24px;
     cursor: pointer;
     padding: 10px;
-    box-sizing: border-box;
 }
 
 #questionForm {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    /* Позволяет форме занимать оставшееся пространство */
-    overflow-y: auto;
-    /* Позволяет прокручивать форму, если она слишком длинная */
-}
-
-#questionForm label {
-    margin-top: 10px;
+    gap: 10px;
 }
 
 #questionForm input,
 #questionForm select {
     padding: 10px;
-    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.input-field {
-    margin-bottom: 10px;
-}
 
 .input-field label {
     display: block;
-    margin-bottom: 5px;
 }
 
 .input-field input[type="text"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.question {
-    margin-bottom: 20px;
 }
 
 .answers {
     display: flex;
-    flex-wrap: wrap;
     /* Позволяет элементам переноситься на новую строку */
-    justify-content: space-between;
-    /* Распределяет элементы по ширине */
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .answer {
     display: flex;
-    align-items: center;
-    width: 48%;
-    /* Устанавливаем ширину для двух колонок */
-    margin-bottom: 10px;
-    /* Отступ между строками */
+    width: auto;
+    max-width: 50%;
 }
-
+/* Радио-кнопки */
 .answer input[type="radio"] {
     margin-right: 10px;
-    /* Отступ справа от радио-кнопки */
     margin-left: 5px;
-    /* Отступ слева от радио-кнопки */
 }
 
-.buttons {
+.save-button {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-}
-
-.buttons button {
     padding: 10px 15px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -178,16 +149,12 @@ p {
     cursor: pointer;
 }
 
-.add-remove {
+.list-buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    gap: 10px;
 }
 
-.add-remove button {
-    margin-left: 10px;
-    margin-top: 10px;
+.list-buttons button {
     background-color: #ffffff;
     border: 1px solid #000000;
     border-radius: 4px;
@@ -195,4 +162,41 @@ p {
     width: 30px;
     height: 30px;
     font-size: 18px;
+}
+
+.modal-main {
+    height: 400px;
+    max-height: 400px;
+    overflow: hidden;
+    display: flex;
+    row-gap: 30px;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+}
+
+.title * {
+    display: block;
+    width: 100%;
+}
+
+.working-panel-questions {
+    display: flex;
+    gap: 100px;
+    overflow: auto;
+}
+
+.questions-list {
+    overflow-y: auto;
+}
+
+.modal-footer {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

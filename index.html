@@ -20,39 +20,57 @@
     <div class="container"></div>
     <button class="add-question-button" id="addQuestionBtn">+</button>
     <div id="myModal" class="modal">
-        <div class="modal-content">
-            <h2>Создание теста</h2>
-            <form id="questionForm">
-                <label for="test-title">Укажите название теста</label>
-                <input type="text" id="test-title" name="test-title" required />
-                <div class="input-field question" id="question-template">
-                    <label for="question">Вопрос 1</label>
-                    <input type="text" id="question" name="question" required />
-                    <div class="add-remove">
-                        <button type="button" class="add-question-btn">+</button>
-                        <button type="button" class="remove-question-btn">-</button>
+        <div class="modal-body">
+            <form method="post" id="questionForm">
+                <div class="modal-header">
+                    <h2>Создание теста</h2>
+                </div>
+
+                <div class="modal-main">
+                    <div class="title wrapper">
+                        <label for="test-title">Укажите название теста</label>
+                        <input type="text" id="test-title" name="test-title" required />
                     </div>
-                    <div class="answers">
-                        <div class="input-field answer">
-                            <input type="radio" name="correct1" value="answer1" />
-                            <input type="text" id="answer1" name="answer1" required />
+
+                    <div class="working-panel-questions">
+                        <div class="questions-list wrapper">
+                            <div class="input-field question wrapper" id="question-template">
+                                <label for="question">Вопрос 1</label>
+                                <input type="text" id="question" name="question" required />
+        
+                                <div class="answers">
+                                    <div class="input-field answer">
+                                        <input type="radio" name="correct1" value="answer1" />
+                                        <input type="text" id="answer1" name="answer1" required />
+                                    </div>
+    
+                                    <div class="input-field answer">
+                                        <input type="radio" name="correct1" value="answer2" />
+                                        <input type="text" id="answer2" name="answer2" required />
+                                    </div>
+    
+                                    <div class="input-field answer">
+                                        <input type="radio" name="correct1" value="answer3" />
+                                        <input type="text" id="answer3" name="answer3" required />
+                                    </div>
+    
+                                    <div class="input-field answer">
+                                        <input type="radio" name="correct1" value="answer4" />
+                                        <input type="text" id="answer4" name="answer4" required />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-field answer">
-                            <input type="radio" name="correct1" value="answer2" />
-                            <input type="text" id="answer2" name="answer2" required />
-                        </div>
-                        <div class="input-field answer">
-                            <input type="radio" name="correct1" value="answer3" />
-                            <input type="text" id="answer3" name="answer3" required />
-                        </div>
-                        <div class="input-field answer">
-                            <input type="radio" name="correct1" value="answer4" />
-                            <input type="text" id="answer4" name="answer4" required />
+    
+                        <div class="list-buttons">
+                            <button type="button" class="add-question-btn">+</button>
+                            <button type="button" class="remove-question-btn">-</button>
                         </div>
                     </div>
                 </div>
-                <div class="buttons">
-                    <button type="submit">Сохранить</button>
+
+                <div class="modal-footer">
+                    <button class="save-button" type="submit">Сохранить</button>
                 </div>
             </form>
         </div>

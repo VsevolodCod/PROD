@@ -44,20 +44,23 @@ function updateQuestionLabels() {
 
 document.addEventListener("click", function (event) {
     if (event.target.classList.contains("add-question-btn")) {
-        const questionForm = event.target.parentNode.parentNode;
         const newQuestionForm = createQuestionForm();
-        questionForm.parentNode.appendChild(newQuestionForm);
+
+        document
+            .querySelector(".questions-list")
+            .appendChild(newQuestionForm);
     }
     if (event.target.classList.contains("remove-question-btn")) {
-        const questionForm = event.target.parentNode.parentNode;
         const allQuestions = document.querySelectorAll(".question");
+        const lastQuestion = document.querySelector(".question:last-child");
 
-        if (allQuestions.length > 1) {
-            questionForm.parentNode.removeChild(questionForm);
-            updateQuestionLabels();
-        } else {
+        if (allQuestions.length === 1) {
             alert("Должен оставаться хотя бы один вопрос.");
+            return;
         }
+
+        lastQuestion.parentNode.removeChild(lastQuestion);
+        updateQuestionLabels();
     }
 });
 
@@ -67,13 +70,13 @@ document.getElementById("questionForm").onsubmit = function (event) {
     const questions = document.querySelectorAll(".question");
     const questionsData = [];
 
-    questions.forEach(function (question, index) {
+    questions.forEach((question, index) => {
         const questionText =
             question.querySelector("input[type='text']").value;
         const answers = question.querySelectorAll(".answer");
         const answersData = [];
 
-        answers.forEach(function (answer, optionIndex) {
+        answers.forEach((answer, optionIndex) => {
             const answerText = answer.querySelector("input[type='text']").value;
             const isCorrect = answer.querySelector(
                 "input[type='radio']"
@@ -134,11 +137,7 @@ function loadTests() {
             if (container) {
                 container.innerHTML = "";
                 tests.forEach((test) => {
-                    const testButton = document.createElement("a");
-                    testButton.href = `test.html?id=${test.id}`;
-                    testButton.className = "test-button";
-                    testButton.textContent = test.title;
-                    container.appendChild(testButton);
+                    container.innerHTML = container.innerHTML + `<a href="test.html?id=${test.id}" class="test-button">${test.title}</a>`;
                 });
             } else {
                 console.error("Элемент с классом 'container' не найден.");
