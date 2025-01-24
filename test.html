@@ -41,7 +41,7 @@
 
     <!-- Модальное окно для результатов теста -->
     <div id="result-modal" class="modal" style="display: none;">
-        <div class="modal-content">
+        <div class="body">
             <div class="header">
                 <h2>Вы завершили тест</h2>
             </div>
@@ -140,7 +140,7 @@
                     <div class="question-text">${question.question}</div>
                     <div class="options-grid">
                         ${question.options.map(option => `
-                            <button class="option-button ${selectedAnswers.get(question.id) === option.id ? 'selected' : ''}"
+                            <button class="option-button button ${selectedAnswers.get(question.id) === option.id ? 'selected' : ''}"
                                     onclick="selectOption('${question.id}', '${option.id}')">
                                 ${option.text}
                             </button>

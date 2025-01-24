@@ -86,21 +86,6 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.add-question-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: 1px solid;
-    border-radius: 5px;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
-
 .input-field label {
     display: block;
 }
@@ -376,21 +361,29 @@ p {
     margin-top: 20px;
 }
 
-.modal-button {
-    padding: 8px 16px;
-    margin: 0 10px;
-    border-radius: 4px;
+/* Общий стиль для всех кнопок */
+.button {
+    background-color: rgb(255, 255, 255); 
+    border: 1px solid rgb(123, 123, 123); 
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
     cursor: pointer;
-    background-color: transparent; 
-    color: #000000; 
     transition: background 0.2s, color 0.2s; 
 }
 
-/* Общий стиль для всех кнопок */
-.button {
-    background-color: #ffffff; 
-    border: 1px solid #7b7b7b; 
-    border-radius: 5px;
+.modal-button {
+    padding: 8px 16px;
+    margin: 0 10px;
+}
+
+.add-test-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    padding: 10px;
 }
 
 .question-action-button {
@@ -401,17 +394,17 @@ p {
 
 .question-button{
     padding: 8px 16px;
-    border: 1px solid #7d7d7d;
+    border: 1px solid rgb(125, 125, 125);
     border-radius: 6px;
     font-size: 14px;
-    color: #000000;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     transition: all 0.2s;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
 }
 
 .border-gray {
-    border: 1px solid #7d7d7d;
+    border: 1px solid rgb(125, 125, 125);
     border-radius: 5px;
 }
 
