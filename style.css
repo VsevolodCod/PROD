@@ -27,10 +27,8 @@ p {
 }
 
 .container {
-    /* Увеличиваем ширину контейнера */
     width: 600px;
     margin: 0 auto;
-    border: 1px solid #ccc;
     padding: 20px;
 }
 
@@ -42,12 +40,12 @@ p {
     color: rgb(0, 0, 0);
     background-color: #ffffff; 
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
     text-align: left;
     width: auto;
-     transition: background-color 0.3s ease;  /* , color 0.3s ease */
+    transition: background-color 0.3s ease;  /* , color 0.3s ease */
 }
 
 .test-button:not(:last-child) {
@@ -103,21 +101,13 @@ p {
     padding: 10px;
 }
 
-#questionForm input,
-#questionForm select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
 .input-field label {
     display: block;
 }
 
-.input-field input[type="text"] {
+.input-field {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
 }
 
 .answers {
@@ -424,6 +414,11 @@ p {
     cursor: pointer;
     transition: all 0.2s;
     background-color: #ffffff;
+}
+
+.border-gray {
+    border: 1px solid #7d7d7d;
+    border-radius: 5px;
 }
 
 /* .arrows-button{
