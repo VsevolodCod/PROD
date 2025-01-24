@@ -407,19 +407,28 @@ p {
 }
 
 /* Общий стиль для всех кнопок */
-/* .button {
-    padding: 10px 15px;
-    font-size: 14px; 
-    color: #000000;
+.button {
     background-color: #ffffff; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.2s, color 0.2s;
+    border: 1px solid #7b7b7b; 
+    border-radius: 4px;
+    padding: 10px;
 }
 
+
+.question-button{
+    padding: 8px 16px;
+    border: 1px solid #7d7d7d;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #ffffff;
+}
+
+/* .arrows-button{
+
+} 
 
 .button.selected, .button.correct, .button.incorrect {
     border-color: #d0d0d0;

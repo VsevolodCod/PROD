@@ -32,10 +32,7 @@
      ```bash
      cd "путь до папки проекта"
      ```
-   - Инициализируйте проект и создайте файл `package.json`:
-     ```bash
-     npm init -y
-     ```
+     
    - Установите необходимые зависимости:
      ```bash
      npm install express body-parser cors
