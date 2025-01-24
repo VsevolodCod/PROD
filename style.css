@@ -143,16 +143,6 @@ p {
     gap: 10px;
 }
 
-.list-buttons button {
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-}
-
 .modal-main {
     height: 400px;
     max-height: 400px;
@@ -400,10 +390,14 @@ p {
 .button {
     background-color: #ffffff; 
     border: 1px solid #7b7b7b; 
-    border-radius: 4px;
-    padding: 10px;
+    border-radius: 5px;
 }
 
+.question-action-button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+}
 
 .question-button{
     padding: 8px 16px;
