@@ -26,7 +26,7 @@
 
     <!-- Модальное окно для подтверждения завершения теста -->
     <div id="confirmation-modal" class="modal">
-        <div class="modal-body wrapper">
+        <div class="modal-body">
             <div clss="header">
                 <h2>Вы точно хотите завершить тест?</h2>
             </div>
@@ -41,14 +41,14 @@
 
     <!-- Модальное окно для результатов теста -->
     <div id="result-modal" class="modal" style="display: none;">
-        <div class="body">
-            <div class="header">
+        <div class="modal-body">
+            <div class="modal-header">
                 <h2>Вы завершили тест</h2>
             </div>
-            <div class="main">
-                <p id="result-text"></p>
+            <div class="modal-main">
+                <div id="result-text" class="test-result"></div>
             </div>
-            <div class="footer">
+            <div class="modal-footer">
                 <button id="result-ok" class="modal-button button">Понятно</button>
             </div>
         </div>
@@ -56,12 +56,12 @@
 
     <!-- Модальное окно для подтверждения перезапуска теста -->
     <div id="restart-confirmation-modal" class="modal">
-        <div class="modal-content">
-            <div class="header">
+        <div class="modal-body">
+            <div class="modal-header">
                 <h2>Вы точно хотите перепройти тест?</h2>
             </div>
-            <div class="footer">
-                <div class="modal-buttons">
+            <div class="modal-footer">
+                <div class="list-buttons">
                     <button id="restart-confirm-yes" class="modal-button button">Да</button>
                     <button id="restart-confirm-no" class="modal-button button">Нет</button>
                 </div>
@@ -237,7 +237,7 @@
         // Обработчик для кнопки "Да" в модальном окне завершения теста
         document.getElementById('confirm-yes').addEventListener('click', function() {
             if (!currentTest) return;
-            
+
             const totalQuestions = currentTest.questions.length;
             const answeredQuestions = selectedAnswers.size;
             let correctAnswers = 0;
@@ -253,13 +253,11 @@
                 }
             });
 
-
             const resultText = `
-                Правильных ответов: ${correctAnswers}<br>
-                Неправильных ответов: ${incorrectAnswers}<br>
-                Всего вопросов: ${totalQuestions}
+                <p>Правильных ответов - ${correctAnswers}</p>
+                <p>Неправильных ответов - ${incorrectAnswers}</p>
+                <p>Всего вопросов - ${totalQuestions}</p>
             `;
-            
 
             document.getElementById('result-text').innerHTML = resultText;
             document.getElementById('result-modal').style.display = 'flex';

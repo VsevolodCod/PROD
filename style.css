@@ -22,10 +22,6 @@ h1 {
     align-items: center;
 }
 
-p {
-    margin-bottom: 2em;
-}
-
 .container {
     width: 600px;
     margin: 0 auto;
@@ -73,13 +69,14 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 25px;
     width: auto;
     height: auto;
+    min-width: 600px;
     max-width: 800px;
     max-height: 100vh;
     margin: 5% auto;
-    padding: 20px;
+    padding: 25px 20px;
     background-color: #fefefe;
     border: 1px solid #888;
     border-radius: 7px;
@@ -115,16 +112,20 @@ p {
 
 .list-buttons {
     display: flex;
-    gap: 10px;
+    justify-content: space-around;
 }
 
 .modal-main {
-    height: 400px;
-    max-height: 400px;
+    height: auto;
     overflow: hidden;
     display: flex;
     row-gap: 30px;
     flex-direction: column;
+}
+
+.add-new-test-modal-main {
+    height: 400px;
+    max-height: 400px;
 }
 
 .wrapper {
@@ -209,8 +210,6 @@ p {
     text-align: left;
     width: 100%;
 }
-
-
 
 .question-text {
     font-size: 16px;
@@ -347,8 +346,10 @@ p {
     display: none; 
 }
 
-.modal-buttons {
-    margin-top: 20px;
+.test-result {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Общий стиль для всех кнопок */
@@ -361,7 +362,7 @@ p {
     transition: background 0.2s, color 0.2s; 
 }
 
-.save-button {
+.modal-button {
     display: flex;
     justify-content: center;
     padding: 10px 15px;
@@ -370,11 +371,6 @@ p {
     border: none;
     cursor: pointer;
     font-size: 16px;
-}
-
-.modal-button {
-    padding: 8px 16px;
-    margin: 0 10px;
 }
 
 .add-test-button {
