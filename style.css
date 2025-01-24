@@ -113,16 +113,6 @@ p {
     margin-left: 5px;
 }
 
-.save-button {
-    display: flex;
-    justify-content: center;
-    padding: 10px 15px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-}
-
 .list-buttons {
     display: flex;
     gap: 10px;
@@ -369,6 +359,17 @@ p {
     color: rgb(0, 0, 0);
     cursor: pointer;
     transition: background 0.2s, color 0.2s; 
+}
+
+.save-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .modal-button {
