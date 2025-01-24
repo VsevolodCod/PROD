@@ -27,10 +27,10 @@
     <!-- Модальное окно для подтверждения завершения теста -->
     <div id="confirmation-modal" class="modal">
         <div class="modal-body">
-            <div clss="header">
+            <div clss="modal-header">
                 <h2>Вы точно хотите завершить тест?</h2>
             </div>
-            <div class="footer">
+            <div class="modal-footer">
                 <div class="list-buttons">
                     <button id="confirm-yes" class="modal-button button">Да</button>
                     <button id="confirm-no" class="modal-button button">Нет</button>
@@ -230,10 +230,6 @@
             window.location.href = 'index.html';
         }
 
-        document.getElementById('finish-button').addEventListener('click', function() {
-            document.getElementById('confirmation-modal').style.display = 'flex';
-        });
-
         // Обработчик для кнопки "Да" в модальном окне завершения теста
         document.getElementById('confirm-yes').addEventListener('click', function() {
             if (!currentTest) return;
@@ -282,6 +278,8 @@
         document.getElementById('finish-button').addEventListener('click', function() {
             if (this.textContent === 'Пройти заново') {
                 document.getElementById('restart-confirmation-modal').style.display = 'flex';
+            } else {
+                document.getElementById('confirmation-modal').style.display = 'flex';
             }
         });
 

@@ -130,7 +130,7 @@ h1 {
 
 .wrapper {
     display: flex;
-    row-gap: 20px;
+    row-gap: 15px;
     flex-direction: column;
 }
 
@@ -150,9 +150,6 @@ h1 {
 }
 
 .modal-footer {
-    bottom: 0;
-    display: flex;
-    justify-content: center;
     width: 100%;
 }
 
@@ -364,7 +361,7 @@ h1 {
 
 .modal-button {
     display: flex;
-    justify-content: center;
+    margin: 0 auto;
     padding: 10px 15px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -400,9 +397,20 @@ h1 {
     background-color: rgb(255, 255, 255);
 }
 
+.question-list-buttons {
+    gap: 10px;
+}
+
 .border-gray {
     border: 1px solid rgb(125, 125, 125);
     border-radius: 5px;
+}
+
+@media screen and (max-width: 980px) {
+    .modal-body {
+        min-width: 80vw;
+        max-width: 90vw;
+    }
 }
 
 /* .arrows-button{
