@@ -2,224 +2,10 @@
 <html lang="ru">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Тест по Dota 2</title>
     <style>
-        /* Ваши стили */
-        * {
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
 
-        body {
-            background-color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            padding: 20px;
-            margin-top: 100px;
-        }
-
-        .sidebar {
-            width: 120px;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-
-        .menu {
-            list-style: none;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-            padding: 10px; /* Добавляем отступы внутри меню */
-        }
-        .menu .question-text-menu.selected {
-            border: 2px solid #7d7d7d;
-            border-radius: 4px;
-        }
-
-        .main-content {
-            flex: 1;
-            max-width: 800px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .test-title {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-
-        .question-container {
-            margin-bottom: 30px;
-        }
-
-        .question-wrapper {
-            border: 2px solid #7d7d7d; /* Увеличиваем толщину рамки */
-            border-radius: 6px;
-            padding: 16px;
-            margin: 100px 0;
-            background-color: #f9f9f9;
-            display: inline-block;
-            text-align: left;
-        }
-
-        .question-wrapper.correct {
-            border-color: #ccffb6; /* Зеленая рамка для правильного ответа */
-        }
-
-        .question-wrapper.incorrect {
-            border-color: #ffb6b6; /* Красная рамка для неправильного ответа */
-        }
-
-        .question-text {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 20px;
-            margin-left: 10px;
-            text-align: center;
-        }
-
-        .options-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .option-button {
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #7d7d7d;
-            border-radius: 6px;
-            font-size: 14px;
-            color: #000000;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-left: 12px;
-        }
-
-        .option-button:hover {
-            background: #f5f5f5;
-        }
-
-        .option-button.selected {
-            background: #f0f0f0;
-            border-color: #d0d0d0;
-        }
-
-        .option-button.correct {
-            background: #ccffb6;
-            border-color: #000000;
-        }
-
-        .option-button.incorrect {
-            background: #ffb6b6;
-            border-color: #000000;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .nav-button {
-            width: 30px;
-            height: 30px;
-            border: 1px solid #7d7d7d;
-            border-radius: 50%;
-            background: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-        }
-
-        .finish-button {
-            display: block;
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #7d7d7d;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-            margin: 20px auto;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-        }
-
-        .question-text-menu {
-            cursor: pointer;
-            padding: 8px 12px;
-            display: inline-block;
-            transition: background 0.2s, border 0.2s;
-        }
-
-        .question-text-menu:hover {
-            background: #f5f5f5;
-        }
-
-        .question-text-menu.correct {
-            color: #000000;
-            background-color: #ccffb6; /* Зеленый для правильного ответа */
-        }
-
-        .question-text-menu.incorrect {
-            color: #000000;
-            background-color: #ffb6b6; /* Красный для неправильного ответа */
-        }
-
-        /* Стили для модального окна */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            display: none; /* Скрыто по умолчанию */
-        }
-
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .modal-buttons {
-            margin-top: 20px;
-        }
-
-        .modal-button {
-            padding: 8px 16px;
-            margin: 0 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: transparent; /* Убираем фон */
-            color: #000000; /* Цвет текста */
-            transition: background 0.2s, color 0.2s; /* Плавный переход */
-        }
     </style>
 </head>
 <body>
@@ -240,10 +26,16 @@
     <!-- Модальное окно для подтверждения завершения теста -->
     <div id="confirmation-modal" class="modal">
         <div class="modal-content">
-            <h2>Вы точно хотите завершить тест?</h2>
-            <div class="modal-buttons">
-                <button id="confirm-yes" class="modal-button">Да</button>
-                <button id="confirm-no" class="modal-button">Нет</button>
+            <div class="end-body">
+                <div clss="end-header">
+                    <h2>Вы точно хотите завершить тест?</h2>
+                </div>
+            </div>
+            <div class="end-footer">
+                <div class="end-buttons">
+                    <button id="confirm-yes" class="modal-button">Да</button>
+                    <button id="confirm-no" class="modal-button">Нет</button>
+                </div>
             </div>
         </div>
     </div>
@@ -251,19 +43,29 @@
     <!-- Модальное окно для результатов теста -->
     <div id="result-modal" class="modal" style="display: none;">
         <div class="modal-content">
-            <h2>Вы завершили тест</h2>
-            <p id="result-text"></p>
-            <button id="result-ok" class="modal-button">Понятно</button>
+            <div class="result-header">
+                <h2>Вы завершили тест</h2>
+            </div>
+            <div class="result-main">
+                <p id="result-text"></p>
+            </div>
+            <div class="result-footer">
+                <button id="result-ok" class="modal-button">Понятно</button>
+            </div>
         </div>
     </div>
 
     <!-- Модальное окно для подтверждения перезапуска теста -->
     <div id="restart-confirmation-modal" class="modal">
         <div class="modal-content">
-            <h2>Вы точно хотите перепройти тест?</h2>
-            <div class="modal-buttons">
-                <button id="restart-confirm-yes" class="modal-button">Да</button>
-                <button id="restart-confirm-no" class="modal-button">Нет</button>
+            <div class="restart-header">
+                <h2>Вы точно хотите перепройти тест?</h2>
+            </div>
+            <div class="restart-footer">
+                <div class="modal-buttons">
+                    <button id="restart-confirm-yes" class="modal-button">Да</button>
+                    <button id="restart-confirm-no" class="modal-button">Нет</button>
+                </div>
             </div>
         </div>
     </div>
@@ -281,7 +83,7 @@
 
         function loadTest() {
             const testId = getTestIdFromUrl();
-            currentTestId = testId; // Сохраняем ID текущего теста
+            currentTestId = testId; 
             fetch('http://localhost:3000/tests')
                 .then(response => {
                     if (!response.ok) {
@@ -361,7 +163,7 @@
         function selectOption(questionId, optionId) {
             // Проверяем, был ли уже выбран ответ для данного вопроса
             if (selectedAnswers.has(questionId)) {
-                return; // Если ответ уже выбран, ничего не делаем
+                return; 
             }
 
             selectedAnswers.set(questionId, optionId);
@@ -381,10 +183,10 @@
             if (selectedButton) {
                 // Проверяем, является ли выбранный ответ правильным
                 if (selectedButton.innerText === correctOption.text) {
-                    selectedButton.classList.add('correct'); // Зелёный для правильного ответа
+                    selectedButton.classList.add('correct'); 
                     updateMenuQuestionStatus(questionId, 'correct');
                 } else {
-                    selectedButton.classList.add('incorrect'); // Красный для неправильного ответа
+                    selectedButton.classList.add('incorrect');
                     updateMenuQuestionStatus(questionId, 'incorrect');
                 }
                 
@@ -393,7 +195,7 @@
                     button.innerText === correctOption.text
                 );
                 if (correctButton) {
-                    correctButton.classList.add('correct'); // Зелёный для правильного ответа
+                    correctButton.classList.add('correct'); 
                 }
             }
         }
@@ -430,7 +232,6 @@
         }
 
         document.getElementById('finish-button').addEventListener('click', function() {
-            // Открываем модальное окно завершения теста
             document.getElementById('confirmation-modal').style.display = 'flex';
         });
 
@@ -453,54 +254,50 @@
                 }
             });
 
-            // Формируем текст результата
+
             const resultText = `
                 Правильных ответов: ${correctAnswers}<br>
                 Неправильных ответов: ${incorrectAnswers}<br>
                 Всего вопросов: ${totalQuestions}
             `;
             
-            // Устанавливаем текст результата и показываем модальное окно
+
             document.getElementById('result-text').innerHTML = resultText;
             document.getElementById('result-modal').style.display = 'flex';
-            document.getElementById('confirmation-modal').style.display = 'none'; // Закрываем модальное окно подтверждения
+            document.getElementById('confirmation-modal').style.display = 'none'; 
         });
 
         // Обработчик для кнопки "Нет" в модальном окне завершения теста
         document.getElementById('confirm-no').addEventListener('click', function() {
-            // Закрываем модальное окно
             document.getElementById('confirmation-modal').style.display = 'none';
         });
 
         // Обработчик для кнопки "Понятно"
         document.getElementById('result-ok').addEventListener('click', function() {
-            // Закрываем модальное окно с результатами
             document.getElementById('result-modal').style.display = 'none';
-            document.getElementById('finish-button').textContent = 'Пройти заново'; // Изменяем текст кнопки
-            selectedAnswers.clear(); // Очищаем выбранные ответы
-            currentQuestionIndex = 0; // Сбрасываем индекс текущего вопроса
-            showQuestion(currentQuestionIndex); // Показываем первый вопрос
+            document.getElementById('finish-button').textContent = 'Пройти заново'; 
+            selectedAnswers.clear(); 
+            currentQuestionIndex = 0; 
+            showQuestion(currentQuestionIndex); 
         });
 
         // Обработчик для кнопки "Пройти заново"
         document.getElementById('finish-button').addEventListener('click', function() {
             if (this.textContent === 'Пройти заново') {
-                // Открываем модальное окно подтверждения перезапуска теста
                 document.getElementById('restart-confirmation-modal').style.display = 'flex';
             }
         });
 
         // Обработчик для кнопки "Да" в модальном окне перезапуска
         document.getElementById('restart-confirm-yes').addEventListener('click', function() {
-            selectedAnswers.clear(); // Очищаем выбранные ответы
-            currentQuestionIndex = 0; // Сбрасываем индекс текущего вопроса
-            loadTest(); // Перезагружаем тест
-            document.getElementById('restart-confirmation-modal').style.display = 'none'; // Закрываем модальное окно
+            selectedAnswers.clear(); 
+            currentQuestionIndex = 0; 
+            loadTest(); 
+            document.getElementById('restart-confirmation-modal').style.display = 'none'; 
         });
 
         // Обработчик для кнопки "Нет" в модальном окне перезапуска
         document.getElementById('restart-confirm-no').addEventListener('click', function() {
-            // Закрываем модальное окно
             document.getElementById('restart-confirmation-modal').style.display = 'none';
         });
 
@@ -508,320 +305,4 @@
     </script>
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тест по Dota 2</title>
-    <style>
-        * {
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
 
-        body {
-            background-color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            padding: 20px;
-            margin-top: 100px;
-        }
-
-        .sidebar {
-            width: 120px;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-
-        .menu {
-            list-style: none;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .menu li button {
-            width: 100%;
-            padding: 8px 12px;
-            text-align: left;
-            background: none;
-            border: none;
-            border-bottom: 1px solid #e0e0e0;
-            color: #333;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .menu li:last-child button {
-            border-bottom: none;
-        }
-
-        .menu li button:hover {
-            background: #f5f5f5;
-        }
-
-        .main-content {
-            flex: 1;
-            max-width: 800px;
-            padding: 20px;
-            text-align: center; /* Выравнивание текста по центру */
-        }
-
-        .test-title {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-
-        .question-container {
-            margin-bottom: 30px;
-            border: 1px solid #e0e0e0; /* Обводка для контейнера вопроса */
-            border-radius: 4px;
-            padding: 15px; /* Внутренний отступ */
-        }
-
-        .question-text {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 20px;
-            margin-left: 10px; /* Отступ 10 пикселей от левой границы */
-            text-align: left; /* Выравнивание текста вопроса по левому краю */
-        }
-
-        .options-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center; /* Выравнивание вариантов ответов по центру */
-        }
-
-        .option-button {
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 20px;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-left: 12px; /* Отступ 10 пикселей от левой границы */
-            width: 100%; /* Занимает всю ширину контейнера */
-            max-width: 300px; /* Максимальная ширина кнопки */
-        }
-
-        .option-button:hover {
-            background: #f5f5f5;
-        }
-
-        .option-button.selected {
-            background: #f0f0f0;
-            border-color: #d0d0d0;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .nav-button {
-            width: 30px;
-            height: 30px;
-            border: 1px solid #e0e0e0;
-            border-radius: 50%;
-            background: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-        }
-
-        .finish-button {
-            display: block;
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-            margin: 20px auto; /* Центрирование кнопки завершения */
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <button class="back-button" onclick="goToMainMenu()">Тесты</button>
-    <div class="sidebar">
-        <ul class="menu" id="menu"></ul>
-    </div>
-    <div class="main-content">
-        <h1 id="test-title" class="test-title"></h1>
-        <div id="questions-container" class="question-container"></div>
-        <div class="navigation">
-            <button class="nav-button" onclick="previousQuestion()">←</button>
-            <button class="nav-button" onclick="nextQuestion()">→</button>
-        </div>
-        <button id="finish-button" class="finish-button">Завершить</button>
-    </div>
-    <script>
-        let currentQuestionIndex = 0;
-        let currentTest = null;
-        let selectedAnswers = new Map();
-
-        function getTestIdFromUrl() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('id');
-        }
-
-        function loadTest() {
-            const testId = getTestIdFromUrl();
-            fetch('http://localhost:3000/tests')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Ошибка при загрузке тестов');
-                    }
-                    return response.json();
-                })
-                .then(tests => {
-                    currentTest = tests.find(test => test.id === testId);
-                    if (currentTest) {
-                        initializeTest(currentTest);
-                    } else {
-                        console.error('Тест не найден');
-                    }
-                })
-                .catch(error => console.error('Ошибка при загрузке теста:', error));
-        }
-
-        function initializeTest(test) {
-            if (!test || !test.questions || !Array.isArray(test.questions)) {
-                console.error('Некорректные данные теста');
-                return;
-            }
-            
-            document.getElementById('test-title').textContent = test.title;
-            
-            const menu = document.getElementById('menu');
-            menu.innerHTML = '';
-            
-            test.questions.forEach((_, index) => {
-                const li = document.createElement('li');
-                const button = document.createElement('button');
-                button.textContent = `Вопрос ${index + 1}`;
-                button.onclick = () => {
-                    currentQuestionIndex = index;
-                    showQuestion(index);
-                };
-                li.appendChild(button);
-                menu.appendChild(li);
-            });
-
-            showQuestion(0);
-        }
-
-        function showQuestion(index) {
-            if (!currentTest || !currentTest.questions[index]) return;
-            
-            const question = currentTest.questions[index];
-            const container = document.getElementById('questions-container');
-            
-            container.innerHTML = `
-                <div class="question-text">${question.question}</div>
-                <div class="options-grid">
-                    ${question.options.map(option => `
-                        <button class="option-button ${selectedAnswers.get(question.id) === option.id ? 'selected' : ''}"
-                                onclick="selectOption('${question.id}', '${option.id}')">
-                            ${option.text}
-                        </button>
-                    `).join('')}
-                </div>
-            `;
-
-            updateActiveQuestion(index);
-        }
-
-        function updateActiveQuestion(index) {
-            const buttons = document.querySelectorAll('.menu button');
-            buttons.forEach((button, i) => {
-                button.style.background = i === index ? '#f5f5f5' : 'none';
-            });
-        }
-
-        function selectOption(questionId, optionId) {
-            selectedAnswers.set(questionId, optionId);
-            
-            const buttons = document.querySelectorAll('.option-button');
-            buttons.forEach(button => button.classList.remove('selected'));
-            
-            const selectedButton = Array.from(buttons).find(button => 
-                button.onclick.toString().includes(optionId)
-            );
-            if (selectedButton) {
-                selectedButton.classList.add('selected');
-            }
-        }
-
-        function nextQuestion() {
-            if (currentTest && currentQuestionIndex < currentTest.questions.length - 1) {
-                currentQuestionIndex++;
-                showQuestion(currentQuestionIndex);
-            }
-        }
-
-        function previousQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                showQuestion(currentQuestionIndex);
-            }
-        }
-
-        function goToMainMenu() {
-            window.location.href = 'index.html';
-        }
-
-        document.getElementById('finish-button').addEventListener('click', function() {
-            if (!currentTest) return;
-            
-            const totalQuestions = currentTest.questions.length;
-            const answeredQuestions = selectedAnswers.size;
-            
-            if (answeredQuestions < totalQuestions) {
-                alert(`Вы ответили только на ${answeredQuestions} из ${totalQuestions} вопросов. Пожалуйста, ответьте на все вопросы.`);
-                return;
-            }
-
-            let correctAnswers = 0;
-            currentTest.questions.forEach(question => {
-                const selectedOption = selectedAnswers.get(question.id);
-                const correctOption = question.options.find(option => option.correct);
-                if (selectedOption === correctOption.id) {
-                    correctAnswers++;
-                }
-            });
-
-            alert(`Тест завершен!\nПравильных ответов: ${correctAnswers} из ${totalQuestions}`);
-            goToMainMenu();
-        });
-
-        window.onload = loadTest;
-    </script>
-</body>
-</html> -->

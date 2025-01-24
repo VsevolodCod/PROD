@@ -30,17 +30,20 @@ p {
     padding: 20px;
 }
 
+/* кнопки тестов */
 .test-button {
     display: block;
     padding: 10px 10px;
     font-size: 1em;
-    color: rgb(95, 91, 91);
+    color: rgb(0, 0, 0);
+    background-color: #ffffff; 
     border: none;
     border-radius: 3px;
     cursor: pointer;
     text-decoration: none;
     text-align: left;
     width: auto;
+     transition: background-color 0.3s ease;  /* , color 0.3s ease */
 }
 
 .test-button:not(:last-child) {
@@ -48,7 +51,8 @@ p {
 }
 
 .test-button:hover {
-    background-color: #b3b3b3;
+    background-color: #efefef;
+    /* color: #000000; */
 }
 
 .modal {
@@ -200,3 +204,284 @@ p {
     justify-content: center;
     width: 100%;
 }
+
+/* стили из test.html */
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.sidebar {
+    width: 120px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    text-align: left; 
+}
+
+.menu {
+    list-style: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 10px; 
+
+}
+
+.menu .question-text-menu.selected {
+    border: 2px solid #7d7d7d;
+    border-radius: 4px;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center; 
+    
+}
+
+
+.test-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.question-container {
+    margin-bottom: 30px;
+    
+}
+
+.question-wrapper {
+    border: 2px solid #7d7d7d;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 100px 0;
+    background-color: #f9f9f9;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+
+
+.question-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.option-button {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #7d7d7d;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 12px;
+}
+
+.option-button:hover {
+    background: #f5f5f5;
+}
+
+.option-button.selected {
+    background: #f0f0f0;
+    border-color: #d0d0d0;
+}
+
+.option-button.correct {
+    background: #ccffb6;
+    border-color: #000000;
+}
+
+.option-button.incorrect {
+    background: #ffb6b6;
+    border-color: #000000;
+}
+
+.question-wrapper.correct {
+    border-color: #ccffb6; 
+}
+
+.question-wrapper.incorrect {
+    border-color: #ffb6b6; 
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #7d7d7d;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.finish-button {
+    display: block;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #7d7d7d;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.question-text-menu {
+    cursor: pointer;
+    padding: 8px 12px;
+    display: inline-block;
+    transition: background 0.2s, border 0.2s;
+}
+
+.question-text-menu:hover {
+    background: #f5f5f5;
+}
+
+.question-text-menu.correct {
+    color: #000000;
+    background-color: #ccffb6; 
+}
+
+.question-text-menu.incorrect {
+    color: #000000;
+    background-color: #ffb6b6; 
+}
+
+/* Стили для модального окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none; 
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.modal-button {
+    padding: 8px 16px;
+    margin: 0 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: transparent; 
+    color: #000000; 
+    transition: background 0.2s, color 0.2s; 
+}
+
+/* Общий стиль для всех кнопок */
+/* .button {
+    padding: 10px 15px;
+    font-size: 14px; 
+    color: #000000;
+    background-color: #ffffff; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+
+.button.selected, .button.correct, .button.incorrect {
+    border-color: #d0d0d0;
+}
+
+.button.correct {
+    background-color: #ccffb6; 
+}
+
+.button.incorrect {
+    background-color: #ffb6b6; 
+}
+
+.button.nav-button {
+    border-radius: 50%; 
+    width: 30px;
+    height: 30px;
+}
+
+.button.finish-button, .button.back-button, .button.modal-button {
+    border-radius: 4px; 
+    padding: 8px 16px;
+}
+
+.button.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.button.modal-button {
+    background-color: transparent; 
+}
+
+.button:hover {
+    background-color: #f5f5f5; 
+    color: #333333; 
+    border-color: #bbbbbb; 
+} */
