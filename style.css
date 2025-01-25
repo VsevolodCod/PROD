@@ -1,63 +1,55 @@
 * {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    margin-block: 0;
-}
-
-body {
+  }
+  
+  body {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: left;
-    height: 100vh;
-    margin: 0;
-    position: relative;
+    justify-content: flex-start;
     min-height: 100vh;
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
     padding: 30px;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    
+  }
+  
+  .container {
     width: 600px;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* кнопки тестов */
-.test-button {
+  }
+  
+  /* Кнопки тестов */
+  .test-button {
     display: block;
-    padding: 10px 10px;
+    padding: 10px;
     font-size: 1em;
-    color: rgb(0, 0, 0);
-    background-color: #ffffff; 
+    color: #000000;
+    /* background-color: #ffffff; */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
     text-align: left;
-    width: auto;
-    transition: background-color 0.3s ease;  /* , color 0.3s ease */
-}
-
-.test-button:not(:last-child) {
+    transition: background-color 0.3s ease;
+  }
+  
+  .test-button:not(:last-child) {
     margin-bottom: 1em;
-}
-
-.test-button:hover {
+  }
+  
+  .test-button:hover {
     background-color: #efefef;
-    /* color: #000000; */
-}
-
-.modal {
+  }
+  
+  .modal {
     display: none;
     position: fixed;
     z-index: 100;
@@ -66,177 +58,163 @@ h1 {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-body {
+    background-color: #000000b3;
+  }
+  
+  .modal-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 25px;
-    width: auto;
-    height: auto;
     min-width: 600px;
     max-width: 800px;
-    max-height: 100vh;
     margin: 5% auto;
     padding: 25px 20px;
-    background-color: #fefefe;
+    background-color: #ffffff;
     border: 1px solid #888;
     border-radius: 7px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.input-field label {
+    box-shadow: 0 4px 8px #00000033;
+  }
+  
+  .input-field label {
     display: block;
-}
-
-.input-field {
+  }
+  
+  .input-field {
     width: 100%;
     padding: 10px;
-}
-
-.answers {
+  }
+  
+  .answers {
     display: flex;
-    /* Позволяет элементам переноситься на новую строку */
     flex-wrap: wrap;
     gap: 10px;
-}
-
-.answer {
+  }
+  
+  .answer {
     display: flex;
-    width: auto;
     max-width: 50%;
-}
-/* Радио-кнопки */
-.answer input[type="radio"] {
-    margin-right: 10px;
-    margin-left: 5px;
-}
-
-.list-buttons {
+  }
+  
+  .answer input[type="radio"] {
+    margin: 0 5px 0 0;
+  }
+  
+  .list-buttons {
     display: flex;
     justify-content: space-around;
-}
-
-.modal-main {
-    height: auto;
-    overflow: hidden;
+  }
+  
+  .modal-main {
     display: flex;
-    row-gap: 30px;
     flex-direction: column;
-}
-
-.add-new-test-modal-main {
+    row-gap: 30px;
+  }
+  
+  .add-new-test-modal-main {
     height: 400px;
     max-height: 400px;
-}
-
-.wrapper {
+  }
+  
+  .wrapper {
     display: flex;
-    row-gap: 15px;
     flex-direction: column;
-}
-
-.title * {
+    row-gap: 15px;
+  }
+  
+  .title * {
     display: block;
     width: 100%;
-}
-
-.working-panel-questions {
+  }
+  
+  .working-panel-questions {
     display: flex;
     gap: 100px;
     overflow: auto;
-}
-
-.questions-list {
+  }
+  
+  .questions-list {
     overflow-y: auto;
-}
-
-.modal-footer {
+  }
+  
+  .modal-footer {
     width: 100%;
-}
-
-/* стили из test.html */
-
-.sidebar {
+  }
+  
+  /* Стили из test.html */
+  .sidebar {
     width: 120px;
     margin-right: 20px;
     flex-shrink: 0;
-    text-align: left; 
-}
-
-.menu {
+    text-align: left;
+  }
+  
+  .menu {
     list-style: none;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #efefef;
     border-radius: 4px;
     overflow: auto;
     padding: 10px;
-    /* display: flex; */
     gap: 100px;
-    /* justify-content: left; */
-    
-}
-
-.menu .question-text-menu.selected {
+  }
+  
+  .menu .question-text-menu.selected {
     border: 1px solid #7d7d7d;
     border-radius: 4px;
-}
-
-.main-content {
+  }
+  
+  .main-content {
     max-width: 800px;
     padding: 20px;
-    text-align: center; 
-}
-
-.tests-main-content p {
     text-align: center;
-}
-
-.tests-main-content {
+  }
+  
+  .tests-main-content p {
+    text-align: center;
+  }
+  
+  .tests-main-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.test-title {
+  }
+  
+  .test-title {
     font-size: 24px;
     color: #333;
     margin-bottom: 30px;
     font-weight: 500;
-}
-
-.question-container {
+  }
+  
+  .question-container {
     margin-bottom: 30px;
-    
-}
-
-.question-wrapper {
+  }
+  
+  .question-wrapper {
     border: 2px solid #7d7d7d;
     border-radius: 6px;
     padding: 16px;
     margin: 100px 0;
-    background-color: #f9f9f9;
     text-align: left;
     width: 100%;
-}
-
-.question-text {
+  }
+  
+  .question-text {
     font-size: 16px;
     color: #333;
     margin-bottom: 20px;
     margin-left: 10px;
     text-align: center;
-}
-
-.options-grid {
+  }
+  
+  .options-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-}
-
-.option-button {
+  }
+  
+  .option-button {
     padding: 8px 16px;
     background: white;
     border: 1px solid #7d7d7d;
@@ -246,46 +224,46 @@ h1 {
     cursor: pointer;
     transition: all 0.2s;
     margin-left: 12px;
-}
-
-.option-button:hover {
-    background: #f5f5f5;
-}
-
-.option-button.selected {
+  }
+  
+  .option-button:hover {
+    background: #efefef;
+  }
+  
+  .option-button.selected {
     background: #f0f0f0;
     border-color: #d0d0d0;
-}
-
-.option-button.correct {
+  }
+  
+  .option-button.correct {
     background: #ccffb6;
     border-color: #000000;
-}
-
-.option-button.incorrect {
+  }
+  
+  .option-button.incorrect {
     background: #ffb6b6;
     border-color: #000000;
-}
-
-.question-wrapper.correct {
-    border-color: #ccffb6; 
-}
-
-.question-wrapper.incorrect {
-    border-color: #ffb6b6; 
-}
-
-.navigation {
+  }
+  
+  .question-wrapper.correct {
+    border-color: #ccffb6;
+  }
+  
+  .question-wrapper.incorrect {
+    border-color: #ffb6b6;
+  }
+  
+  .navigation {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
-}
-
-.nav-button {
+  }
+  
+  .nav-button {
     width: 30px;
     height: 30px;
-    border: 1px solid #7d7d7d;
+    border: 1px solid #7b7b7b;
     border-radius: 50%;
     background: white;
     cursor: pointer;
@@ -293,94 +271,93 @@ h1 {
     align-items: center;
     justify-content: center;
     font-size: 16px;
-}
-
-.finish-button {
+  }
+  
+  .finish-button {
     display: block;
     padding: 8px 16px;
     background: white;
-    border: 1px solid #7d7d7d;
+    border: 1px solid #7b7b7b;
     border-radius: 4px;
     font-size: 14px;
     color: #333;
     cursor: pointer;
     margin: 20px auto;
-}
-
-.back-button {
+  }
+  
+  .back-button {
     position: absolute;
     top: 20px;
     left: 20px;
     padding: 8px 16px;
     background: white;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #efefef;
     border-radius: 4px;
     font-size: 14px;
     color: #333;
     cursor: pointer;
-}
-
-.question-text-menu {
+  }
+  
+  .question-text-menu {
     cursor: pointer;
     padding: 8px 12px;
     display: inline-block;
     transition: background 0.2s, border 0.2s;
-}
-
-
-.question-text-menu.correct {
+  }
+  
+  .question-text-menu.correct {
     color: #000000;
-    background-color: #ccffb6; 
-}
-
-.question-text-menu.incorrect {
+    background-color: #ccffb6;
+  }
+  
+  .question-text-menu.incorrect {
     color: #000000;
-    background-color: #ffb6b6; 
-}
-
-/* Стили для модального окна */
-.modal {
+    background-color: #ffb6b6;
+  }
+  
+  /* Стили для модального окна */
+  .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00000080;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    display: none; 
-}
-
-.test-result {
+    display: none;
+  }
+  
+  .test-result {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-/* Общий стиль для всех кнопок */
-.button {
-    background-color: rgb(255, 255, 255); 
-    border: 1px solid rgb(123, 123, 123); 
+  }
+  
+  /* Общий стиль для всех кнопок */
+  .button {
+    background-color: #ffffff;
+    border: 1px solid #7b7b7b;
     border-radius: 5px;
-    color: rgb(0, 0, 0);
+    color: #000000;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s; 
-}
-
-.modal-button {
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .modal-button {
     display: flex;
     margin: 0 auto;
     padding: 10px 15px;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    color: #000000;
     border: none;
     cursor: pointer;
     font-size: 16px;
-}
-
-.add-test-button {
+  }
+  
+  .add-test-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -388,89 +365,96 @@ h1 {
     height: 50px;
     font-size: 24px;
     padding: 10px;
-}
-
-.question-action-button {
+  }
+  
+  .question-action-button {
     width: 30px;
     height: 30px;
     font-size: 18px;
-}
-
-.question-button{
+  }
+  
+  .question-button {
     padding: 8px 16px;
-    border: 1px solid rgb(125, 125, 125);
+    border: 1px solid #7d7d7d;
     border-radius: 6px;
     font-size: 14px;
-    color: rgb(0, 0, 0);
+    color: #000000;
     cursor: pointer;
     transition: all 0.2s;
-    background-color: rgb(255, 255, 255);
-}
-
-.question-list-buttons {
+    background-color: #ffffff;
+  }
+  
+  .question-list-buttons {
     gap: 10px;
-}
-
-.border-gray {
-    border: 1px solid rgb(125, 125, 125);
+  }
+  
+  .border-gray {
+    border: 1px solid #7d7d7d;
     border-radius: 5px;
-}
-
-.working-panel-test-questions {
-    display: flex ;
+  }
+  
+  .working-panel-test-questions {
+    display: flex;
     flex-direction: row;
-    width: 100%; /* Занимает всю ширину родителя */
-    height: auto; /* Высота по содержимому */
-    padding: 20px; /* Отступы вокруг содержимого */
-    margin-top: 60px; /* Отступ сверху, чтобы начинаться ниже кнопки */
-}
-/* .working-panel-test-questions .sidebar,
-.working-panel-test-questions .main-content,
-.working-panel-test-questions .navigation {
-    margin-bottom: 20px; /* Отступ снизу для каждого блока 
-} */
-
-.working-panel-test-questions .main-content {
-    flex-grow: 2; /* Занимает доступное пространство */
-    background-color: white; /* Белый фон для основного контента */
-    padding: 15px; /* Отступы внутри блока */
-    width: 80%; /* Процент ширины относительно родителя */
-    margin: auto; /* Автоматические отступы с обеих сторон для центрирования */
-}
-
-.s {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 60px;
+  }
+  
+  .working-panel-test-questions .main-content {
+    flex-grow: 2;
+    background-color: #ffffff;
+    padding: 15px;
+    width: 80%;
+    margin: auto;
+  }
+  
+  .main-content{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-}
-
-@media screen and (max-width: 980px) {
+  }
+  
+  @media screen and (max-width: 980px) {
     .modal-body {
-        min-width: 80vw;
-        max-width: 90vw;
+      min-width: 80vw;
+      max-width: 90vw;
     }
-
+  
     .container {
-        width: 60%; 
-        padding: 10px; 
+      width: 60%;
+      padding: 10px;
     }
-
+  
     p {
-        text-align: center; 
-        width: 100%; 
+      text-align: center;
+      width: 100%;
     }
-    
-    /* .add-test-button {
-        width: 50px;
-        padding: 5px;
-    } */
-
-    .question-wrapper{
-        width: 60%;
+  
+    .question-wrapper {
+      width: 60%;
     }
-}
-
+  }
+  
+  .test-button {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .delete-test-button {
+    display: none;
+    margin-left: 10px;
+  }
+  
+  .test-button:hover .delete-test-button {
+    display: inline-block;
+    display: flex;
+  }
+  
 
 
 

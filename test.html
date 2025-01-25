@@ -3,34 +3,31 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Тест по Dota 2</title>
-    <style>
-
-    </style>
+    <title>Тест</title>
 </head>
 <body>
     <div class="working-panel-test-questions">
-        <button class="back-button button" onclick="goToMainMenu()">Тесты</button>
+        <button test-id="back-to-test-list-page" class="back-button button" onclick="goToMainMenu()">Тесты</button>
         <div class="sidebar">
             <ul class="menu" id="menu"></ul>
         </div>
-        <div class="s">
-            <div class="main-content">
+        <div class="main-content">
+            <div class="main-content-s">
                 <h1 id="test-title" class="test-title"></h1>
                 <div id="questions-container" class="question-container"></div>
             </div>
             <div class="navigation">
-                <button class="nav-button" onclick="previousQuestion()">←</button>
-                <button class="nav-button" onclick="nextQuestion()">→</button>
+                <button test-id="prev-question" class="nav-button" onclick="previousQuestion()">←</button>
+                <button test-id="next-question" class="nav-button" onclick="nextQuestion()">→</button>
             </div>
-            <button id="finish-button" class="finish-button button">Завершить</button>
+            <button test-id="finish-button" id="finish-button" class="finish-button button">Завершить</button>
         </div>
     </div>
 
     <!-- Модальное окно для подтверждения завершения теста -->
     <div id="confirmation-modal" class="modal">
         <div class="modal-body">
-            <div clss="modal-header">
+            <div class="modal-header">
                 <h2>Вы точно хотите завершить тест?</h2>
             </div>
             <div class="modal-footer">
@@ -155,6 +152,38 @@
             updateActiveQuestion(index);
         }
 
+        function showQuestion(index) {
+            if (!currentTest || !currentTest.questions[index]) return;
+            
+            const question = currentTest.questions[index];
+            const container = document.getElementById('questions-container');
+            
+            container.innerHTML = `
+                <div class="question-wrapper">
+                    <div class="question-text">${question.question}</div>
+                    <div class="options-grid">
+                        ${question.options.map(option => {
+                            const isSelected = selectedAnswers.get(question.id) === option.id;
+                            const isCorrect = option.correct;
+                            const buttonClass = `
+                                option-button button 
+                                ${isSelected ? "selected" : ""} 
+                                ${isSelected && isCorrect ? "correct" : ""} 
+                                ${isSelected && !isCorrect ? "incorrect" : ""}
+                            `;
+                            return `
+                                <button class="${buttonClass}" onclick="selectOption('${question.id}', '${option.id}')">
+                                    ${option.text}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+
+            updateActiveQuestion(index);
+        }
+
         function updateActiveQuestion(index) {
             const buttons = document.querySelectorAll('.menu .question-text-menu');
             buttons.forEach((button, i) => {
@@ -214,6 +243,11 @@
                 }
             });
         }
+        
+        // function selectOption(questionId, optionId) {
+        //     selectedAnswers.set(questionId, optionId);
+        //     showQuestion(currentQuestionIndex); // Обновляем отображение вопроса
+        // }
 
         function nextQuestion() {
             if (currentTest && currentQuestionIndex < currentTest.questions.length - 1) {
@@ -268,13 +302,40 @@
             document.getElementById('confirmation-modal').style.display = 'none';
         });
 
+        // Обработчик для кнопки "Да" в модальном окне завершения теста
+        document.getElementById('confirm-yes').addEventListener('click', function() {
+            if (!currentTest) return;
+
+            const totalQuestions = currentTest.questions.length;
+            const answeredQuestions = selectedAnswers.size;
+            let correctAnswers = 0;
+            let incorrectAnswers = 0;
+
+            currentTest.questions.forEach(question => {
+                const selectedOption = selectedAnswers.get(question.id);
+                const correctOption = question.options.find(option => option.correct);
+                if (selectedOption === correctOption.id) {
+                    correctAnswers++;
+                } else if (selectedOption) {
+                    incorrectAnswers++;
+                }
+            });
+
+            const resultText = `
+                <p>Правильных ответов - ${correctAnswers}</p>
+                <p>Неправильных ответов - ${incorrectAnswers}</p>
+                <p>Всего вопросов - ${totalQuestions}</p>
+            `;
+
+            document.getElementById('result-text').innerHTML = resultText;
+            document.getElementById('result-modal').style.display = 'flex';
+            document.getElementById('confirmation-modal').style.display = 'none'; 
+            document.getElementById('finish-button').textContent = 'Пройти заново'; 
+        });
+
         // Обработчик для кнопки "Понятно"
         document.getElementById('result-ok').addEventListener('click', function() {
             document.getElementById('result-modal').style.display = 'none';
-            document.getElementById('finish-button').textContent = 'Пройти заново'; 
-            selectedAnswers.clear(); 
-            currentQuestionIndex = 0; 
-            showQuestion(currentQuestionIndex); 
         });
 
         // Обработчик для кнопки "Пройти заново"
@@ -292,6 +353,7 @@
             currentQuestionIndex = 0; 
             loadTest(); 
             document.getElementById('restart-confirmation-modal').style.display = 'none'; 
+            document.getElementById('finish-button').textContent = 'Завершить'; 
         });
 
         // Обработчик для кнопки "Нет" в модальном окне перезапуска
@@ -303,4 +365,3 @@
     </script>
 </body>
 </html>
-

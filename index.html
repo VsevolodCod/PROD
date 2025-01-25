@@ -1,97 +1,129 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="script.js" async></script>
     <title>Создание теста</title>
-</head>
+  </head>
 
-<body>
-    <h1>Добро пожаловать</h1>
+  <body>
+    <h1 test-id = "list-title">Добро пожаловать</h1>
     <div class="tests-main-content">
-        <p>
-            Сайт посвящен прохождению тестов. Выберите тест, который хотите пройти.
-        </p>
-        <div class="container border-gray"></div>
+      <p test-id="list-subtitle">
+        Сайт посвящен прохождению тестов. Выберите тест, который хотите пройти.
+      </p>
+      <div test-id="list-items" class="container border-gray">
+        <!-- Здесь будут динамически добавляться тесты -->
+      </div>
     </div>
-    <button class="add-test-button button" id="addQuestionBtn">+</button>
+    <button test-id="list-add-button" class="add-test-button button" id="addQuestionBtn">+</button>
     <div id="myModal" class="modal">
-        <form method="post" id="questionForm">
-            <div class="modal-body">
-                <div class="modal-header">
-                    <h2>Создание теста</h2>
-                </div>
+      <form method="post" id="questionForm">
+        <div class="modal-body">
+          <div class="modal-header">
+            <h2 test-id="form-title">Создание теста</h2>
+          </div>
 
-                <div class="modal-main add-new-test-modal-main">
-                    <div class="title wrapper">
-                        <label for="test-title">Укажите название теста</label>
-                        <input type="text" id="test-title" name="test-title" class="border-gray input-field" required />
-                    </div>
-
-                    <div class="working-panel-questions">
-                        <div class="questions-list wrapper">
-                            <div class="question wrapper" id="question-template">
-                                <label for="question">Вопрос 1</label>
-                                <input type="text" id="question" name="question" class="border-gray input-field" required />
-        
-                                <div class="answers">
-                                    <div class="answer">
-                                        <input type="radio" name="correct1" value="answer1" />
-                                        <input type="text" id="answer1" name="answer1" class="border-gray input-field" required />
-                                    </div>
-    
-                                    <div class="answer">
-                                        <input type="radio" name="correct1" value="answer2" />
-                                        <input type="text" id="answer2" name="answer2" class="border-gray input-field" required />
-                                    </div>
-    
-                                    <div class="answer">
-                                        <input type="radio" name="correct1" value="answer3" />
-                                        <input type="text" id="answer3" name="answer3" class="border-gray input-field" required />
-                                    </div>
-    
-                                    <div class="answer">
-                                        <input type="radio" name="correct1" value="answer4" />
-                                        <input type="text" id="answer4" name="answer4" class="border-gray input-field" required />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="list-buttons question-list-buttons">
-                            <button
-                                type="button"
-                                class="
-                                    add-question-btn
-                                    button
-                                    question-action-button
-                                "
-                            >
-                                +
-                            </button>
-                            <button
-                                type="button"
-                                class="
-                                    remove-question-btn
-                                    button
-                                    question-action-button
-                                "
-                            >
-                                -
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button class="modal-button" type="submit">Сохранить</button>
-                </div>
+          <div class="modal-main add-new-test-modal-main">
+            <div class="title wrapper">
+              <label for="test-title">Укажите название теста</label>
+              <input  
+                test-id="new-test-title"
+                type="text"
+                id="test-title"
+                name="test-title"
+                class="border-gray input-field"
+                required
+              />
             </div>
-        </form>
-    </div>
-</body>
 
+            <div class="working-panel-questions">
+              <div class="questions-list wrapper">
+                <div class="question wrapper" id="question-template">
+                  <label for="question">Вопрос 1</label>
+                  <input
+                    test-id="new-test-question"
+                    type="text"
+                    id="question"
+                    name="question"
+                    class="border-gray input-field"
+                    required
+                  />
+
+                  <div test-id="new-test-options" class="answers">
+                    <div class="answer">
+                      <input type="radio" name="correct1" value="answer1" />
+                      <input
+                        type="text"
+                        id="answer1"
+                        name="answer1"
+                        class="border-gray input-field"
+                        required
+                      />
+                    </div>
+
+                    <div class="answer">
+                      <input type="radio" name="correct1" value="answer2" />
+                      <input
+                        type="text"
+                        id="answer2"
+                        name="answer2"
+                        class="border-gray input-field"
+                        required
+                      />
+                    </div>
+
+                    <div class="answer">
+                      <input type="radio" name="correct1" value="answer3" />
+                      <input
+                        type="text"
+                        id="answer3"
+                        name="answer3"
+                        class="border-gray input-field"
+                        required
+                      />
+                    </div>
+
+                    <div class="answer">
+                      <input type="radio" name="correct1" value="answer4" />
+                      <input
+                        type="text"
+                        id="answer4"
+                        name="answer4"
+                        class="border-gray input-field"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-buttons question-list-buttons">
+                <button
+                  test-id="add-question-button"
+                  type="button"
+                  class="add-question-btn button question-action-button"
+                >
+                  +
+                </button>
+                <button
+                  test-id="remove-question-button"
+                  type="button"
+                  class="remove-question-btn button question-action-button"
+                >
+                  -
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button test-id="save-button" class="modal-button" type="submit">Сохранить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
