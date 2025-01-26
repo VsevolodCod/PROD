@@ -56,7 +56,7 @@ app.post("/tests", (req, res) => {
 // Удаление теста
 app.delete("/tests/:id", (req, res) => {
   const testId = req.params.id;
-  tests = tests.filter((test) => test.id !== testId);ы
+  tests = tests.filter((test) => test.id !== testId);
   try {
     fs.writeFileSync("tests.json", JSON.stringify(tests, null, 2));
     console.log("Test deleted successfully:", testId);
