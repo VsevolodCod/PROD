@@ -23,6 +23,7 @@ h1 {
   width: 600px;
   margin: 0 auto;
   padding: 20px;
+  
 }
 
 .test-button {
@@ -43,7 +44,7 @@ h1 {
 }
 
 .test-button:hover {
-  background-color: #efefef;
+  background-color: #efefef;  
 }
 
 .modal {
@@ -109,6 +110,7 @@ h1 {
 }
 
 .add-new-test-modal-main {
+  flex-grow: 1;
   height: 400px;
   max-height: 400px;
 }
@@ -160,7 +162,6 @@ h1 {
 }
 
 .main-content {
-  max-width: 800px;
   padding: 20px;
   text-align: center;
 }
@@ -398,11 +399,10 @@ h1 {
 }
 
 .working-panel-test-questions .main-content {
-  flex-grow: 2;
-  background-color: #ffffff;
-  padding: 15px;
-  width: 80%;
-  margin: auto;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  width: 100%; 
 }
 
 .main-content {
@@ -439,7 +439,7 @@ h1 {
   }
 
   .delete-test-button {
-    display: none;
+    display: flex;
     margin-left: 10px;
   }
 
@@ -451,45 +451,51 @@ h1 {
 
 /* Стили для мобильных устройств */
 @media (max-width: 768px) {
-    .questions-list {
-        display: block; 
-        padding: 10px; 
-        max-height: 80vh; 
-        overflow-y: auto; 
-        border: 1px solid #ccc; 
-        border-radius: 5px;
-        background-color: #f9f9f9; 
-    }
+  .questions-list {
+      display: flex; 
+      flex-wrap: wrap; /* Позволяет элементам обтекать друг друга */
+      gap: 5px; /* Отступ между вопросами */
+      padding: 10px; 
+      max-height: 80vh; 
+      overflow-y: auto; 
+      border: 1px solid #ccc; 
+      border-radius: 5px;
+      background-color: #f9f9f9; 
+  }
 
-    .question-wrapper {
-        border: 2px solid #7d7b7d;
-        border-radius: 6px;
-        padding: 16px;
-        margin: 15px 0; /* Увеличиваем отступ между вопросами */
-        text-align: left;
-        width: 100%; 
-    }
+  .question-wrapper {
+      border: 2px solid #7d7b7d;
+      border-radius: 6px;
+      padding: 16px;
+      margin: 5px; /* Уменьшаем отступ между вопросами */
+      text-align: left;
+      width: 80%; /* Делаем ширину 50% с учетом отступа */
+  }
 
-    .question-text {
-        font-weight: bold; 
-        margin-bottom: 10px; 
-    }
+  .question-text {
+      font-weight: bold; 
+      margin-bottom: 10px; 
+  }
 
-    .options-grid {
-        display: flex; 
-        flex-direction: column; 
-    }
+  .options-grid {
+      display: flex; 
+      flex-direction: column; 
+  }
 
-    .option-button {
-        width: 100%; 
-        margin: 5px 0; 
-        padding: 10px; 
-        font-size: 16px;
-    }
+  .option-button {
+      width: 100%; 
+      margin: 5px 0; 
+      padding: 10px; 
+      font-size: 16px;
+  }
 
-    .navigation {
-        display: none; 
-    }
+  .navigation {
+      display: none; /* Скрываем навигацию */
+  }
+
+  .sidebar {
+      display: none; /* Скрываем боковую панель */
+  }
 }
 
 @media (min-width: 768px) {
